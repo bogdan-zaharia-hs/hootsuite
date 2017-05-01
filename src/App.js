@@ -13,11 +13,11 @@ class App extends Component {
 
   fetchData = (evt) => {
       evt.preventDefault();
-      var location = encodeURIComponent(this.state.location);
-      var urlPrefix = 'http://api.openweathermap.org/data/2.5/forecast?q=';
-      var urlSuffix = '&APPID=7270636ef9799cbf3f36a77dab214397&units=metric';
-      var url = urlPrefix + location + urlSuffix;
-      var self = this;
+      let location = encodeURIComponent(this.state.location);
+      let urlPrefix = 'http://api.openweathermap.org/data/2.5/forecast?q=';
+      let urlSuffix = '&APPID=7270636ef9799cbf3f36a77dab214397&units=metric';
+      let url = urlPrefix + location + urlSuffix;
+      let self = this;
 
       xhr({
           url: url
@@ -35,11 +35,11 @@ class App extends Component {
   };
 
   render() {
-    var currentTemp = '-';
-    var windSpeed = '-';
-    var clouds = '-';
-    var pressure = '-';
-    var humidity = '-';
+    let currentTemp = '-';
+    let windSpeed = '-';
+    let clouds = '-';
+    let pressure = '-';
+    let humidity = '-';
 
     if (this.state.data.list) currentTemp = this.state.data.list[0].main.temp;
     if (this.state.data.list) pressure = this.state.data.list[0].main.pressure;
